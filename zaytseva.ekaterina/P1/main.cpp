@@ -49,7 +49,7 @@ namespace zaytseva
       }
       prev_num = curr_num;
       curr_num = next_num;
-      }
+    }
     return count;
   }
 }
