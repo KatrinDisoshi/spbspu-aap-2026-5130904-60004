@@ -15,7 +15,7 @@ int main()
   char* result = nullptr;
   try
   {
-    str = new char[maxSize + 1];
+    str = new char[max_size + 1];
     std::cout << "Enter a string:\n";
     while (true)
     {
