@@ -8,8 +8,8 @@ namespace zaytseva
 
 int main()
 {
-  const int initialMaxSize = 16;
-  int maxSize = initialMaxSize;
+  const int initial_max_size = 16;
+  int max_size = initial_max_size;
   int length = 0;
   char* str = nullptr;
   char* result = nullptr;
@@ -24,21 +24,27 @@ int main()
       {
         break;
       }
-      if (length >= maxSize)
+      if (length >= max_size)
       {
-        char* const newStr = new char[maxSize * 2 + 1];
+        char* const new_str = new char[max_size * 2 + 1];
         for (int i = 0; i < length; i++)
         {
-          newStr[i] = str[i];
+          new_str[i] = str[i];
         }
         delete[] str;
-        str = newStr;
-        maxSize = maxSize * 2;
+        str = new_str;
+        max_size = max_size * 2;
       }
       str[length] = ch;
       ++length;
     }
     str[length] = '\0';
+    if (length == 0)
+    {
+      std::cerr << "Empty input\n";
+      delete[] str;
+      return 1;
+    }
     char symb1 = '\0';
     char symb2 = '\0';
     std::cout << "Enter the symbols. First, the one to be replaced.\n";
